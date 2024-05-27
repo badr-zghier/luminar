@@ -19,6 +19,9 @@ class CheckRole
                 return $next($request);
             }
         }
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
         abort(403, 'Unauthorized :-(');
     }
 }

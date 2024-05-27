@@ -65,7 +65,7 @@ class RolesPermisstionsSeeder extends Seeder
             'name' => 'adminUser',
             'email' => 'admin@luminar.com',
             'password' => bcrypt('secret'),
-            'role' => 'admin',
+
         ]);
 
         $adminUser->assignRole('admin');
@@ -75,9 +75,9 @@ class RolesPermisstionsSeeder extends Seeder
         //Teacher User
         $teacherUser = User::factory()->create([
             'name' => 'teacherUser',
-            'email' => 'teacher@luminar/com',
+            'email' => 'teacher@luminar.com',
             'password' => bcrypt('secret'),
-            'role' => 'tacher'
+
         ]);
 
         $teacherUser->assignRole('teacher');
@@ -89,7 +89,7 @@ class RolesPermisstionsSeeder extends Seeder
             'name' => 'studentUser',
             'email' =>  'student@luminar.com',
             'password' => bcrypt('secret'),
-            'role' => 'student'
+
         ]);
 
         $studentUser->assignRole('student');
