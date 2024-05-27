@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeacherCoursesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,6 +19,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified', 'role:teacher'])->name('dashboard');
 
+// Teacher Routes
+Route::get('/courses', [TeacherCoursesController::class, 'index'])->middleware('auth', 'role:teacher')->name('courses');
 
 
 
