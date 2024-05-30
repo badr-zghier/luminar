@@ -14,4 +14,10 @@ class TeacherCoursesController extends Controller
 
         return Inertia::render('Courses')->with("courses", $courses);
     }
+
+    public function course($id)
+    {
+        $course = Course::where("id", $id)->first();
+        dd($course);
+    }
 }

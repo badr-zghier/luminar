@@ -21,7 +21,7 @@ Route::get('/dashboard', function () {
 
 // Teacher Routes
 Route::get('/courses', [TeacherCoursesController::class, 'index'])->middleware('auth', 'role:teacher')->name('courses');
-
+Route::get('/course/{id}', [TeacherCoursesController::class, 'course'])->middleware('auth', 'role:teacher')->name('course');
 
 
 Route::middleware(['auth', 'role:teacher'])->group(function () {
